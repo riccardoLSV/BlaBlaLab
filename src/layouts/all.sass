@@ -50,6 +50,7 @@ html
 
 body 
   font-family: "Ubuntu", sans-serif
+  overflow-x: hidden
 
 
 article,
@@ -654,16 +655,20 @@ button
 
 .post 
   width: 33%
-  padding: 10px
   backface-visibility: hidden
   -webkit-backface-visibility: hidden
   transition: all 0.2s
   position: relative
-  margin-bottom: 50px
+  margin-bottom: 75px
 
   a 
     display: block
-  
+    margin: 10px
+
+    &:hover 
+      .post-txt 
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 15px
+        transform: translateY(calc(50% - 5px))
 
   .post-img 
     width: 100%
@@ -727,10 +732,7 @@ button
         font-size: 18px
         line-height: 1.35
       
-  &:hover 
-    .post-txt 
-      box-shadow: rgba(0, 0, 0, 0.15) 0px 3px 15px
-      transform: translateY(calc(50% - 5px))
+  
     
   
 .full-width-image-container
