@@ -13,9 +13,12 @@ export default class IndexPage extends React.Component {
           {posts.map(({ node: post }) => (
             <div className="post">
               <Link to={post.fields.slug}>
-                <div className="post-img">
-                  <img />
-                </div>
+                <div
+                  className="post-img"
+                  style={{
+                    backgroundImage: "url(" + post.frontmatter.cover_image + ")"
+                  }}
+                />
                 <div className="post-txt">
                   <h3>{post.frontmatter.title}</h3>
                   <p>{post.excerpt}</p>
@@ -54,6 +57,7 @@ export const pageQuery = graphql`
             title
             templateKey
             date(formatString: "MMMM DD, YYYY")
+            cover_image
           }
         }
       }

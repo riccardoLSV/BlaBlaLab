@@ -1,38 +1,45 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Netlify CMS Starter',
+    title: "Gatsby + Netlify CMS Starter"
   },
   plugins: [
-    'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sass',
+    "gatsby-plugin-react-helmet",
+    "gatsby-plugin-sass",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/pages`,
-        name: 'pages',
-      },
+        name: "pages"
+      }
     },
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
         path: `${__dirname}/src/img`,
-        name: 'images',
-      },
+        name: "images"
+      }
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
+    `gatsby-remark-copy-linked-files`,
+    "gatsby-plugin-sharp",
+    "gatsby-transformer-sharp",
     {
-      resolve: 'gatsby-transformer-remark',
+      resolve: `gatsby-remark-images`,
       options: {
-        plugins: [],
-      },
+        maxWidth: 1200
+      }
     },
     {
-      resolve: 'gatsby-plugin-netlify-cms',
+      resolve: "gatsby-transformer-remark",
       options: {
-        modulePath: `${__dirname}/src/cms/cms.js`,
-      },
+        plugins: []
+      }
     },
-    'gatsby-plugin-netlify', // make sure to keep it last in the array
-  ],
-}
+    {
+      resolve: "gatsby-plugin-netlify-cms",
+      options: {
+        modulePath: `${__dirname}/src/cms/cms.js`
+      }
+    },
+    "gatsby-plugin-netlify" // make sure to keep it last in the array
+  ]
+};
