@@ -36,13 +36,13 @@ const Navbar = () => (
     <div className="menu">
       <ul>
         <li>
-          <Link>Categoria</Link>
+          <Link to="/">Categoria</Link>
         </li>
         <li>
-          <Link>Categoria</Link>
+          <Link to="/">Categoria</Link>
         </li>
         <li>
-          <Link>Categoria</Link>
+          <Link to="/">Categoria</Link>
         </li>
       </ul>
     </div>
