@@ -1,4 +1,5 @@
 @import "~bulma/sass/utilities/initial-variables"
+@import "fontello-embedded.css"
 
 // Config vars
 $kaldi-red: #FD461E
@@ -581,38 +582,22 @@ button
   margin: 0 5px
   position: relative
   float: right
-
-  &:before 
-    content: " "
-    display: block
-    position: absolute
-    bottom: 0
-    width: 100%
-    height: 1px
-    transform: scale(0)
-    transition: 0.3s ease
+  transition: 0.3s
   
-
-  &:hover 
-    &:before 
-      content: " "
-      display: block
-      position: absolute
-      width: 100%
-      height: 1px
-      background: #f05c61
-      transform: scale(1)
-      transform-origin: left center
+  &:hover
+    color: #f05c61
     
+
   
 
 
 .header-nav 
-  padding: 20px 0
+
   border-top: 5px solid #f05c61
   border-bottom: 1px solid #eee
 
   .header-nav-wrapper 
+    padding: 20px 0
     max-width: 1200px
     margin: 0 auto
     width: 100%
@@ -624,8 +609,34 @@ button
   .logo 
     width: 200px
     margin: 0
-  
 
+  ul
+    display: flex
+    justify-content: center
+    align-items: center
+
+    li
+      a
+        padding: 0 2.5px
+        font-size: 25px
+        transition: 0.3s
+        &:hover
+          color: #f05c61
+  
+.menu
+  background-color: #eee
+
+  ul
+    padding: 10px 0
+    display: flex
+    justify-content: flex-start
+    max-width: 1200px
+    margin: 0 auto
+    li
+      &:not(:last-of-type)
+        padding-right: 10px
+      a
+        font-size: 16px
 
 /*Home Blog*/
 .blog-container 
@@ -652,6 +663,8 @@ button
   display: flex
   flex-wrap: wrap
 
+  @media only screen and (max-width: 600px)
+    justify-content: center
 
 .post 
   width: 33%
@@ -660,6 +673,15 @@ button
   transition: all 0.2s
   position: relative
   margin-bottom: 75px
+
+  @media only screen and (max-width: 1024px)
+    width: 50%
+
+  @media only screen and (max-width: 600px)
+    width: 80%
+
+  @media only screen and (max-width: 425px)
+    width: 300px
 
   a 
     display: block
@@ -719,11 +741,19 @@ button
     margin-bottom: 150px
     .post-img 
       height: 500px
-    
+
+      @media only screen and (max-width: 600px)
+        height: 350px
+          
 
     .post-txt 
+      justify-content: flex-start
       height: 200px
       padding: 10px 30px
+      overflow: hidden
+
+      @media only screen and (max-width: 600px)
+        height: 150px
 
       h3 
         font-size: 30px
@@ -887,3 +917,10 @@ button
   display: block
   text-align: center
 
+
+footer
+  background-color: #eeeeee
+  font-size: 13px
+  color: #999
+  text-align: center
+  padding: 5px 0
