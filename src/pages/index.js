@@ -11,7 +11,7 @@ export default class IndexPage extends React.Component {
       <section className="section">
         <div className="post-container">
           {posts.map(({ node: post }) => (
-            <div className="post">
+            <div key={post.id} className="post">
               <Link to={post.fields.slug}>
                 <div
                   className="post-img"
